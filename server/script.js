@@ -25,8 +25,10 @@ function showProducts(products) {
     const card = document.createElement('div');
     card.classList.add('product-card');
 
+    console.log(product.image);
+
     card.innerHTML = `
-      <img src="${(!product.image || product.image === 'undefined') ? 'placeholder.jpg' : product.image}" alt="${product.name || 'Rat Product'}">
+      <img src=${product.image}>
       <h3>${product.name}</h3>
       <p>Price: £${product.price.toFixed(2)}</p>
       <p>Category: ${product.category}</p>
@@ -51,3 +53,5 @@ async function init() {
 }
 
 init();
+
+      // <img src="${(!product.image || product.image === 'undefined') ? 'server/images/placeholder.jpg' : product.image}" alt="${product.name || 'Rat Product'}">
