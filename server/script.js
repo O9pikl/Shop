@@ -26,12 +26,13 @@ function showProducts(products) {
     card.classList.add('product-card');
 
     card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
+      <img src="${(!product.image || product.image === 'undefined') ? 'placeholder.jpg' : product.image}" alt="${product.name || 'Rat Product'}">
       <h3>${product.name}</h3>
       <p>Price: £${product.price.toFixed(2)}</p>
       <p>Category: ${product.category}</p>
       <p>Stock: ${product.stock}</p>
     `;
+
 
     list.append(card);
   }
