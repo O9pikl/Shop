@@ -5,7 +5,7 @@ const products = [
     price: 7.99,
     category: 'standard rats',
     stock: 1295,
-    image: "images/brownrat.jpg"
+    image: "images/brownrat.webp"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const products = [
     price: 7.99,
     category: 'standard rats',
     stock: 740,
-    image: 'images/blackrat.jpg'
+    image: 'images/blackrat.webp'
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const products = [
     price: 8.49,
     category: 'standard rats',
     stock: 492,
-    image: 'images/whiterat.jpg'
+    image: 'images/whiterat.webp'
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const products = [
     price: 12.99,
     category: 'big rats',
     stock: 110,
-    image: 'images/fatrat.jpg'
+    image: 'images/fatrat.webp'
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const products = [
     price: 14.49,
     category: 'big rats',
     stock: 95,
-    image: 'images/musclerat.jpg'
+    image: 'images/musclerat.webp'
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const products = [
     price: 20.99,
     category: 'special rats',
     stock: 45,
-    image: 'images/flyingrat.jpg'
+    image: 'images/flyingrat.webp'
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const products = [
     price: 24.99,
     category: 'special rats',
     stock: 22,
-    image: 'images/psychicrat.jpg'
+    image: 'images/psychicrat.webp'
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const products = [
     price: 0.99,
     category: 'rat food',
     stock: 403,
-    image: 'images/deadhalfrat.jpg'
+    image: 'images/deadhalfrat.webp'
   },
   {
     id: 9,
@@ -69,11 +69,11 @@ const products = [
     price: 0.49,
     category: 'rat food',
     stock: 239,
-    image: 'images/cheese.jpg'
+    image: 'images/cheese.webp'
   }
 ];
 
-// app.use('/images', express.static('images'));//MAY make express use the image folder
+
 const express = require('express');
 
 const app = express();
@@ -82,9 +82,7 @@ const PORT = process.env.PORT || 3000;
 // Start timer
 const startTime = performance.now();
 
-app.get('/', (req, res) => {
-    res.send('shop');
-});
+app.use(express.static("public"));
 
 app.get('/api/health', (req, res) => {
     res.json({status: 'OK'});
